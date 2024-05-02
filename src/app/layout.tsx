@@ -1,14 +1,20 @@
+import './globals.css';
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Roboto } from 'next/font/google';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 export const metadata: Metadata = {
     title: 'Software x Climate',
     description: 'Overview of software x climate landscape',
 };
+
+const roboto = Roboto({
+    weight: ['300', '400', '500', '700'],
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 export default function RootLayout({
     children,
@@ -16,8 +22,22 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={inter.className}>{children}</body>
+        <html>
+            <body lang="en" className={roboto.className}>
+                <Container maxWidth="lg">
+                    <Box
+                        sx={{
+                            my: 4,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                    >
+                        {children}
+                    </Box>
+                </Container>
+            </body>
         </html>
     );
 }

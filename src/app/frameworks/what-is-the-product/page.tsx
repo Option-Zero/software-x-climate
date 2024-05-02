@@ -1,6 +1,11 @@
 'use client';
+import Typography from '@mui/material/Typography';
 import React from 'react';
 
 export default function WhatIsTheProduct() {
-    return <h1>What is the product?</h1>;
+    return (
+        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
+            What is the product?
+        </Typography>
+    );
 }
