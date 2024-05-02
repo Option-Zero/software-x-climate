@@ -1,3 +1,35 @@
 {
-  "extends": "next/core-web-vitals"
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "parser": "@typescript-eslint/parser"
+  },
+  "plugins": ["prettier", "react", "@typescript-eslint"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "@next/next/no-img-element": "off"
+  },
+  "ignorePatterns": ["node_modules", "build", "dist", "public", "**/*.css", "pnpm-lock.yaml"]
 }

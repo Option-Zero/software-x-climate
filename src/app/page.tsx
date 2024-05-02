@@ -2,7 +2,5 @@
 import React from 'react';
 
 export default function Home() {
-    return (
-        <div>TBD</div>
-    );
+    return <div>TBD</div>;
 }
