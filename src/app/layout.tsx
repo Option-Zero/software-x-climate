@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import { CompaniesProvider } from '@/app/providers';
 
 export const metadata: Metadata = {
     title: 'Software x Climate',
@@ -24,19 +25,21 @@ export default function RootLayout({
     return (
         <html>
             <body lang="en" className={roboto.className}>
-                <Container maxWidth="lg">
-                    <Box
-                        sx={{
-                            my: 4,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}
-                    >
-                        {children}
-                    </Box>
-                </Container>
+                <CompaniesProvider>
+                    <Container maxWidth="lg">
+                        <Box
+                            sx={{
+                                my: 4,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        >
+                            {children}
+                        </Box>
+                    </Container>
+                </CompaniesProvider>
             </body>
         </html>
     );

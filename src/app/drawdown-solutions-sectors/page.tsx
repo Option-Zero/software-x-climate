@@ -2,10 +2,10 @@
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-export default function BitsVsAtoms() {
+export default function DrawdownSolutionsSectors() {
     return (
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-            Bits vs. Atoms
+            [Coming soon] Drawdown solutions sectors
         </Typography>
     );
 }
