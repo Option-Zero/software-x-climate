@@ -16,7 +16,7 @@ export async function GET() {
     const companies = records.map((record) => {
         return {
             ...record.fields,
-            Logo: (record.fields.Logo as Attachment[])[0], // Logo field is an array of Attachments, so just pick the first
+            Logo: record.fields.Logo ? (record.fields.Logo as Attachment[])[0] : undefined, // Logo field is an array of Attachments, so just pick the first
         };
     });
 
