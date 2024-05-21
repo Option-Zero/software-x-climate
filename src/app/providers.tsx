@@ -6,6 +6,8 @@ export type Company = {
     Logo: { url: string };
     Website: string;
     'Product category': string;
+    'Drawdown sector': string;
+    'Drawdown subgroup': string;
 };
 
 export const CompaniesContext = createContext<{ companies: Company[] }>({
