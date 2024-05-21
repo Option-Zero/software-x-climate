@@ -14,7 +14,7 @@ function DataPage() {
 
     return (
         <>
-            <Typography variant="h1" component="h1" sx={{ mb: 2 }}>
+            <Typography variant="h1" sx={{ mb: 2 }}>
                 Companies
             </Typography>
             <Stack spacing={2}>{companiesList}</Stack>

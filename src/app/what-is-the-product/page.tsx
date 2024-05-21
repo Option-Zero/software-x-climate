@@ -31,7 +31,7 @@ const ProductCategory = ({
 
     return (
         <Stack>
-            <Typography variant="h5" component="h5" sx={{ mb: 1 }}>
+            <Typography variant="h5" sx={{ mb: 1 }}>
                 {categoryName}
             </Typography>
             <ProductCategoryBox>
@@ -48,7 +48,7 @@ export default function WhatIsTheProduct() {
 
     return (
         <>
-            <Typography variant="h1" component="h1" sx={{ mb: 2 }}>
+            <Typography variant="h1" sx={{ mb: 2 }}>
                 What is the product?
             </Typography>
             <Stack direction="row" spacing={2}>
