@@ -9,7 +9,7 @@ import { CompaniesContext, Company } from '@/app/providers';
 import CompanyLogo from '@/app/_components/CompanyLogo';
 import Container from '@mui/material/Container';
 
-export const bebas = Bebas_Neue({
+const bebas = Bebas_Neue({
     weight: ['400'],
     subsets: ['latin'],
     display: 'swap',
