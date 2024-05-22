@@ -5,6 +5,7 @@ export type Company = {
     Name: string;
     Logo: { url: string };
     Website: string;
+    Summary: string;
     'Product category': string;
     'Drawdown sector': string;
     'Drawdown subgroup': string;
