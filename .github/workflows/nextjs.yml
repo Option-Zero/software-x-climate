@@ -68,11 +68,11 @@ jobs:
 
             - name: Install dependencies
               run: pnpm install
-              env:
-                AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
 
             - name: Build with Next.js
               run: pnpm next build
+              env:
+                AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
