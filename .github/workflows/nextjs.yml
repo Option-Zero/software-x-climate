@@ -68,6 +68,8 @@ jobs:
 
             - name: Install dependencies
               run: pnpm install
+              env:
+                AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
 
             - name: Build with Next.js
               run: pnpm next build
