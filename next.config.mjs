@@ -9,6 +9,16 @@ const nextConfig = {
             },
         ],
     },
+    async redirects() {
+        return [
+            // Redirect from home to the only page we've built so far
+            {
+                source: '/',
+                destination: '/drawdown-solutions-sectors',
+                permanent: false,
+            },
+        ];
+    },
 };
 
 export default nextConfig;
