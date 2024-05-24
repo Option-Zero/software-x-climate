@@ -14,7 +14,7 @@ const nextConfig = {
             // Redirect from home to the only page we've built so far
             {
                 source: '/',
-                destination: '/drawdown-solutions-sectors',
+                destination: '/frameworks/drawdown-solutions-sectors',
                 permanent: false,
             },
         ];

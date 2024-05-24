@@ -49,7 +49,7 @@ export default function WhatIsTheProduct() {
     return (
         <>
             <Typography variant="h1" sx={{ mb: 2 }}>
-                What is the product?
+                [WIP] What is the product?
             </Typography>
             <Stack direction="row" spacing={2}>
                 {productCategories.map((category) => (
