@@ -1,6 +1,6 @@
 export const CURRENT_COHORT = '2024-06';
 
-export const COHORT_LINKS = {
+export const PER_COHORT_LINKS = {
     '2024-06': [
         {
             name: 'Hex workspace',
@@ -85,7 +85,7 @@ export const COHORT_LINKS = {
     ],
     '2024-04': [
         {
-            name: 'hex-workspace',
+            name: 'Hex workspace',
             slug: 'hex-workspace',
             url: 'https://app.hex.tech/8848a05c-8000-408c-9011-f87eca4333c5',
         },
@@ -156,3 +156,18 @@ export const COHORT_LINKS = {
         },
     ],
 };
+
+export const STATIC_LINKS = [
+    {
+        name: 'Office hours (calendly)',
+        url: 'https://calendly.com/option-zero/office-hours',
+    },
+    {
+        name: 'Past cohorts final projects',
+        url: 'https://airtable.com/appiTlFyRhnNrKlLh/shrT1vwHe9tmoKCUy/tblXD5Vfd9lUIhd10',
+    },
+    {
+        name: 'Climate datasources',
+        url: 'https://www.notion.so/terra-dot-do/Useful-Data-Sources-for-Climate-Solutions-fe03dac0418344f9a4c9f35a81be1588',
+    },
+];

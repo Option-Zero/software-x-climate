@@ -1,4 +1,7 @@
-import { COHORT_LINKS, CURRENT_COHORT } from './src/app/cohort/perCohortLinks.js';
+import {
+    PER_COHORT_LINKS,
+    CURRENT_COHORT,
+} from './src/app/cohort/softwareForClimateCourseLinks.js';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,7 +24,7 @@ const nextConfig = {
             },
             // Add redirects for links for the current cohort of Software For Climate
             // (so that we only have to update those links in one place, for each new cohort)
-            ...COHORT_LINKS[CURRENT_COHORT].map(({ slug, url }) => {
+            ...PER_COHORT_LINKS[CURRENT_COHORT].map(({ slug, url }) => {
                 return {
                     source: `/links/${slug}`,
                     destination: url,

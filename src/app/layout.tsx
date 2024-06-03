@@ -2,9 +2,6 @@ import './globals.css';
 import React from 'react';
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans } from 'next/font/google';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import { CompaniesProvider } from '@/app/providers';
 
 export const metadata: Metadata = {
     title: 'Software x Climate',
@@ -25,21 +22,7 @@ export default function RootLayout({
     return (
         <html>
             <body lang="en" className={ibmplex.className}>
-                <CompaniesProvider>
-                    <Container maxWidth="lg">
-                        <Box
-                            sx={{
-                                my: 4,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                            }}
-                        >
-                            {children}
-                        </Box>
-                    </Container>
-                </CompaniesProvider>
+                {children}
             </body>
         </html>
     );

@@ -4,10 +4,15 @@ import Link from 'next/link.js';
 import { notFound } from 'next/navigation.js';
 import Typography from '@mui/material/Typography';
 
-import { COHORT_LINKS, CURRENT_COHORT } from '../perCohortLinks.js';
+import {
+    PER_COHORT_LINKS,
+    STATIC_LINKS,
+    CURRENT_COHORT,
+} from '../softwareForClimateCourseLinks.js';
+import { Container } from '@mui/material';
 
-const cohortExists = (cohort: string): cohort is keyof typeof COHORT_LINKS => {
-    return cohort in COHORT_LINKS;
+const cohortExists = (cohort: string): cohort is keyof typeof PER_COHORT_LINKS => {
+    return cohort in PER_COHORT_LINKS;
 };
 
 export default function Home({ params }: { params: { cohort: string } }) {
@@ -17,7 +22,17 @@ export default function Home({ params }: { params: { cohort: string } }) {
         return notFound();
     }
 
-    const links = COHORT_LINKS[cohort].map(({ name, url }) => {
+    const perCohortLinks = PER_COHORT_LINKS[cohort].map(({ name, url }) => {
+        return (
+            <li key={name}>
+                <Link href={url as string} rel="noopener noreferrer" target="_blank">
+                    {name}
+                </Link>
+            </li>
+        );
+    });
+
+    const staticLinks = STATIC_LINKS.map(({ name, url }) => {
         return (
             <li key={name}>
                 <Link href={url as string} rel="noopener noreferrer" target="_blank">
@@ -28,11 +43,13 @@ export default function Home({ params }: { params: { cohort: string } }) {
     });
 
     return (
-        <>
-            <Typography variant="h4">Cohort {cohort} Links</Typography>
-            <nav>
-                <ul>{links}</ul>
-            </nav>
-        </>
+        <Container maxWidth="lg">
+            <Typography variant="h3">Software for Climate - Cohort {cohort}</Typography>
+            <Typography variant="h4">Course links</Typography>
+            <Typography variant="h5">Static</Typography>
+            <ul>{staticLinks}</ul>
+            <Typography variant="h5">Per-cohort</Typography>
+            <ul>{perCohortLinks}</ul>
+        </Container>
     );
 }
