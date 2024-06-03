@@ -2,13 +2,13 @@ const CURRENT_COHORT = '2024-06';
 
 const COHORT_REDIRECTS = {
     '2024-06': {
-        'hex-workspace': '/todo',
-        'assignment-1-hex-notebook': '404',
-        'assignment-2-hex-notebook': '404',
-        'assignment-3-hex-notebook': '404',
-        'assignment-4a-hex-notebook': '404',
-        'assignment-4b-hex-notebook': '404',
-        'assignment-5-hex-notebook': '404',
+        'hex-workspace': 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4',
+        'assignment-1-hex-notebook': 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/ace22725-1516-4039-9b49-6089ecb71c4b', // prettier-ignore
+        'assignment-2-hex-notebook': 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/0f1a4929-52a0-4288-a808-aa5d27765b4c', // prettier-ignore
+        'assignment-3-hex-notebook': 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/ff28be91-e132-4a5a-8815-df703b75d382', // prettier-ignore
+        'assignment-4a-hex-notebook': 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/5cfa7a62-22c5-427e-bc46-6ae7eda5bdce', // prettier-ignore
+        'assignment-4b-hex-notebook': 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/a10717d4-f330-4577-a3e4-580c91adafde', // prettier-ignore
+        'assignment-5-hex-notebook': 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/457978c9-9cbd-4f8a-949f-d9f7a33ede11', // prettier-ignore
         'cohort-airtable': 'https://airtable.com/appqRZmfelIxD17dP',
         'fellows-list': 'https://airtable.com/appqRZmfelIxD17dP/shroUmvQRS6orkby3',
         'fellows-form': 'https://airtable.com/appqRZmfelIxD17dP/pagnU7FXYAYMqQeqp/form',
@@ -36,8 +36,6 @@ const COHORT_REDIRECTS = {
         'final-project-presentation-signup': 'https://docs.google.com/spreadsheets/d/1SSSvtCUFxuekxBHLBMdbZU2kn4TiSxUu8itS79XU-3I/edit#gid=739439826', // prettier-ignore
     },
 };
-
-// softwarexclimate.com/links/
 
 const currentCohortRedirects = Object.entries(COHORT_REDIRECTS[CURRENT_COHORT]).map(
     ([name, url]) => {
