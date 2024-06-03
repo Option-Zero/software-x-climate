@@ -17,7 +17,7 @@ export default function Home({ params }: { params: { cohort: string } }) {
         return notFound();
     }
 
-    const links = COHORT_LINKS[CURRENT_COHORT].map(({ name, url }) => {
+    const links = COHORT_LINKS[cohort].map(({ name, url }) => {
         return (
             <li key={name}>
                 <Link href={url as string} rel="noopener noreferrer" target="_blank">
