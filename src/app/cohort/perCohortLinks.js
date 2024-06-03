@@ -83,7 +83,7 @@ export const COHORT_LINKS = {
             url: 'https://docs.google.com/spreadsheets/d/1kIfaeswc7HOTjuyFuv7ZZqFpGMR2e7UHB0JWep1wUaI/edit#gid=739439826',
         },
     ],
-    '202-04': [
+    '2024-04': [
         {
             name: 'hex-workspace',
             slug: 'hex-workspace',
