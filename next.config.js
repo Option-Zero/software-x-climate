@@ -1,6 +1,7 @@
 import {
     PER_COHORT_LINKS,
     CURRENT_COHORT,
+    EXTERNAL_LINKS_PATH,
 } from './src/app/cohort/softwareForClimateCourseLinks.js';
 
 /** @type {import('next').NextConfig} */
@@ -26,7 +27,7 @@ const nextConfig = {
             // (so that we only have to update those links in one place, for each new cohort)
             ...PER_COHORT_LINKS[CURRENT_COHORT].map(({ slug, url }) => {
                 return {
-                    source: `/links/${slug}`,
+                    source: `${EXTERNAL_LINKS_PATH}${slug}`,
                     destination: url,
                     permanent: false,
                 };

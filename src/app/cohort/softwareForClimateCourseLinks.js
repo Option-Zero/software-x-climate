@@ -171,3 +171,5 @@ export const STATIC_LINKS = [
         url: 'https://www.notion.so/terra-dot-do/Useful-Data-Sources-for-Climate-Solutions-fe03dac0418344f9a4c9f35a81be1588',
     },
 ];
+
+export const EXTERNAL_LINKS_PATH = '/links/';

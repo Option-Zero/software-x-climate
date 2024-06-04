@@ -5,9 +5,10 @@ import { notFound } from 'next/navigation.js';
 import Typography from '@mui/material/Typography';
 
 import {
+    CURRENT_COHORT,
     PER_COHORT_LINKS,
     STATIC_LINKS,
-    CURRENT_COHORT,
+    EXTERNAL_LINKS_PATH,
 } from '../softwareForClimateCourseLinks.js';
 import { Container } from '@mui/material';
 
@@ -22,10 +23,14 @@ export default function Home({ params }: { params: { cohort: string } }) {
         return notFound();
     }
 
-    const perCohortLinks = PER_COHORT_LINKS[cohort].map(({ name, url }) => {
+    const perCohortLinks = PER_COHORT_LINKS[cohort].map(({ name, slug }) => {
         return (
             <li key={name}>
-                <Link href={url as string} rel="noopener noreferrer" target="_blank">
+                <Link
+                    href={`${EXTERNAL_LINKS_PATH}${slug}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
                     {name}
                 </Link>
             </li>
