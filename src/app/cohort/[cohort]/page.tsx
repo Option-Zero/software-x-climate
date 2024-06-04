@@ -27,7 +27,7 @@ export default function Home({ params }: { params: { cohort: string } }) {
         return (
             <li key={name}>
                 <Link
-                    href={`${EXTERNAL_LINKS_PATH}${slug}`}
+                    href={`${EXTERNAL_LINKS_PATH}/${slug}`}
                     rel="noopener noreferrer"
                     target="_blank"
                 >

@@ -3,6 +3,11 @@ export const CURRENT_COHORT = '2024-06';
 export const PER_COHORT_LINKS = {
     '2024-06': [
         {
+            name: 'Slido audience participation',
+            slug: 'slido',
+            url: 'https://app.sli.do/event/wkgFiPsXbvs9zfbsCRSbUf',
+        },
+        {
             name: 'Hex workspace',
             slug: 'hex-workspace',
             url: 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4',
@@ -36,6 +41,11 @@ export const PER_COHORT_LINKS = {
             name: 'Assignment 5 Hex Notebook',
             slug: 'assignment-5-hex-notebook',
             url: 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/457978c9-9cbd-4f8a-949f-d9f7a33ede11',
+        },
+        {
+            name: 'Assignment 5 Fleet Monitoring Notebook',
+            slug: 'assignment-5-fleet-monitor',
+            url: 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/app/55647bab-470e-4453-a846-3aeb4313b0f6/latest',
         },
         {
             name: 'Cohort Airtable',
@@ -120,6 +130,11 @@ export const PER_COHORT_LINKS = {
             url: 'https://app.hex.tech/8848a05c-8000-408c-9011-f87eca4333c5/hex/57060506-9601-4855-98cc-27cd7dd3d0f7',
         },
         {
+            name: 'Assignment 2.3 Fleet Monitoring Notebook',
+            slug: 'assignment-5-fleet-monitor',
+            url: 'https://app.hex.tech/software-for-climate/app/b332ffdc-ddc9-4648-aeb5-eba659ca8667/latest',
+        },
+        {
             name: 'Cohort Airtable',
             slug: 'cohort-airtable',
             url: 'https://airtable.com/appny4e2a2OxHugIM',
@@ -172,4 +187,4 @@ export const STATIC_LINKS = [
     },
 ];
 
-export const EXTERNAL_LINKS_PATH = '/links/';
+export const EXTERNAL_LINKS_PATH = '/links';

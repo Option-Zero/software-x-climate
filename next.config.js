@@ -27,11 +27,19 @@ const nextConfig = {
             // (so that we only have to update those links in one place, for each new cohort)
             ...PER_COHORT_LINKS[CURRENT_COHORT].map(({ slug, url }) => {
                 return {
-                    source: `${EXTERNAL_LINKS_PATH}${slug}`,
+                    source: `${EXTERNAL_LINKS_PATH}/${slug}`,
                     destination: url,
                     permanent: false,
                 };
             }),
+            // We host redirects to external links at EXTERNAL_LINKS_PATH
+            // However, we list all the current cohort's links at /cohort/current
+            // Therefore, if anyone tries to just go to EXTERNAL_LINKS_PATH, redirect to /cohort/current
+            {
+                source: EXTERNAL_LINKS_PATH,
+                destination: '/cohort/current',
+                permanent: false,
+            },
         ];
     },
 };
