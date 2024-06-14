@@ -16,14 +16,14 @@ const cohortExists = (cohort: string): cohort is keyof typeof PER_COHORT_LINKS =
     return cohort in PER_COHORT_LINKS;
 };
 
-export default function Home({ params }: { params: { cohort: string } }) {
-    const cohort = params.cohort == 'current' ? CURRENT_COHORT : params.cohort;
+type LinkConfig = {
+    name: string;
+    slug: string;
+    url: string;
+};
 
-    if (!cohortExists(cohort)) {
-        return notFound();
-    }
-
-    const perCohortLinks = PER_COHORT_LINKS[cohort].map(({ name, slug }) => {
+const Links = ({ linkConfigs }: { linkConfigs: LinkConfig[] }) => {
+    const linksListItems = linkConfigs.map(({ name, slug }) => {
         return (
             <li key={name}>
                 <Link
@@ -37,24 +37,24 @@ export default function Home({ params }: { params: { cohort: string } }) {
         );
     });
 
-    const staticLinks = STATIC_LINKS.map(({ name, url }) => {
-        return (
-            <li key={name}>
-                <Link href={url as string} rel="noopener noreferrer" target="_blank">
-                    {name}
-                </Link>
-            </li>
-        );
-    });
+    return <ul>{linksListItems}</ul>;
+};
+
+export default function Home({ params }: { params: { cohort: string } }) {
+    const cohort = params.cohort == 'current' ? CURRENT_COHORT : params.cohort;
+
+    if (!cohortExists(cohort)) {
+        return notFound();
+    }
 
     return (
         <Container maxWidth="lg">
             <Typography variant="h3">Software for Climate - Cohort {cohort}</Typography>
             <Typography variant="h4">Course links</Typography>
             <Typography variant="h5">Static</Typography>
-            <ul>{staticLinks}</ul>
+            <Links linkConfigs={STATIC_LINKS} />
             <Typography variant="h5">Per-cohort</Typography>
-            <ul>{perCohortLinks}</ul>
+            <Links linkConfigs={PER_COHORT_LINKS[cohort]} />
         </Container>
     );
 }

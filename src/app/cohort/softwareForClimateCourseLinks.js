@@ -92,6 +92,11 @@ export const PER_COHORT_LINKS = {
             slug: 'final-project-presentation-signup',
             url: 'https://docs.google.com/spreadsheets/d/1kIfaeswc7HOTjuyFuv7ZZqFpGMR2e7UHB0JWep1wUaI/edit#gid=739439826',
         },
+        {
+            name: 'End of course survey',
+            slug: 'end-of-course-survey',
+            url: '404',
+        },
     ],
     '2024-04': [
         {
@@ -169,20 +174,28 @@ export const PER_COHORT_LINKS = {
             slug: 'final-project-presentation-signup',
             url: 'https://docs.google.com/spreadsheets/d/1SSSvtCUFxuekxBHLBMdbZU2kn4TiSxUu8itS79XU-3I/edit#gid=739439826',
         },
+        {
+            name: 'End of course survey',
+            slug: 'end-of-course-survey',
+            url: 'https://atisundar.typeform.com/to/o7SQggkc',
+        },
     ],
 };
 
 export const STATIC_LINKS = [
     {
-        name: 'Office hours (calendly)',
+        name: 'Office hours',
+        slug: 'office-hours',
         url: 'https://calendly.com/option-zero/office-hours',
     },
     {
-        name: 'Past cohorts final projects',
+        name: 'Final projects gallery',
+        slug: 'final-projects-gallery',
         url: 'https://airtable.com/appiTlFyRhnNrKlLh/shrT1vwHe9tmoKCUy/tblXD5Vfd9lUIhd10',
     },
     {
-        name: 'Climate datasources',
+        name: 'Climate-relevant data sources',
+        slug: 'climate-data-sources',
         url: 'https://www.notion.so/terra-dot-do/Useful-Data-Sources-for-Climate-Solutions-fe03dac0418344f9a4c9f35a81be1588',
     },
 ];
