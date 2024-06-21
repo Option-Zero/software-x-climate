@@ -25,7 +25,7 @@ export const PER_COHORT_LINKS = {
         {
             name: 'Assignment 3 Hex Notebook',
             slug: 'assignment-3-hex-notebook',
-            url: 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/ff28be91-e132-4a5a-8815-df703b75d382',
+            url: 'https://app.hex.tech/22816b08-0e6f-4dd8-8bc7-fda1c98d25d4/hex/5f8b327e-5cab-4326-b23c-d39743bf8402',
         },
         {
             name: 'Assignment 4a Hex Notebook',
