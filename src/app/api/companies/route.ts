@@ -26,6 +26,6 @@ export async function GET() {
     return Response.json({ data: companies });
 }
 
-// Tell next.js to revalidate every time this page is fetched
+// Tell next.js to revalidate every 10 seconds
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = 0;
+export const revalidate = 10;
