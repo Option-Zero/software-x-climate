@@ -9,7 +9,7 @@ const base = new Airtable({ apiKey }).base(SOFTWARE_X_CLIMATE_COMPANIES_BASE_ID)
 
 
 export async function GET() {
-    const records = await base(COMPANIES_TABLE_NAME).select({ view: COMPANIES_GRID_VIEW }).filter();
+    const records = await base(COMPANIES_TABLE_NAME).select({ view: COMPANIES_GRID_VIEW }).all();
 
     // eslint-disable-next-line no-console
     console.log('Fetching records from Airtable...');
