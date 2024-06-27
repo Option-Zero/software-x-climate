@@ -7,8 +7,9 @@ const COMPANIES_GRID_VIEW = 'Grid view';
 
 const base = new Airtable({ apiKey }).base(SOFTWARE_X_CLIMATE_COMPANIES_BASE_ID);
 
+
 export async function GET() {
-    const records = await base(COMPANIES_TABLE_NAME).select({ view: COMPANIES_GRID_VIEW }).all();
+    const records = await base(COMPANIES_TABLE_NAME).select({ view: COMPANIES_GRID_VIEW }).filter();
 
     // eslint-disable-next-line no-console
     console.log('Fetching records from Airtable...');
@@ -25,3 +26,7 @@ export async function GET() {
 
     return Response.json({ data: companies });
 }
+
+// Tell next.js to revalidate every time this page is fetched
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = 0;
