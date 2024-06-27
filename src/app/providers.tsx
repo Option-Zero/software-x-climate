@@ -20,7 +20,11 @@ export const CompaniesProvider = ({ children }: { children: React.ReactNode }) =
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch('/api/companies');
+            const response = await fetch('/api/companies', {
+                next: {
+                    revalidate: 10, // Revalidate if 10 seconds stale
+                },
+            });
             const result = await response.json();
             setCompanies(result.data);
         }
