@@ -26,6 +26,6 @@ export async function GET() {
     return Response.json({ data: companies });
 }
 
-// Tell next.js to revalidate every 10 seconds
+// Disable ISR for this route - airtable data could change at any time.
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = 10;
+export const revalidate = 0;
