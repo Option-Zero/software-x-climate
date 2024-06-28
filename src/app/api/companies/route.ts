@@ -25,3 +25,7 @@ export async function GET() {
 
     return Response.json({ data: companies });
 }
+
+// Disable ISR for this route - airtable data could change at any time.
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = 0;
