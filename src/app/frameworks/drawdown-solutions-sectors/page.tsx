@@ -86,6 +86,12 @@ const SECTOR_COLORS: Record<string, { light: string; medium: string; dark: strin
     },
 };
 
+const ProjectDrawdownLink = (
+    <a href="https://drawdown.org/drawdown-foundations" rel="noopener noreferrer" target="_blank">
+        Project Drawdown
+    </a>
+);
+
 export default function DrawdownSolutionsSectors() {
     const { companies } = useContext(CompaniesContext);
 
@@ -94,6 +100,10 @@ export default function DrawdownSolutionsSectors() {
             <Typography variant="h1" sx={{ mb: 2, fontFamily: bebas.style.fontFamily }}>
                 Drawdown Solutions Sectors
             </Typography>
+            <Typography variant="h6" sx={{ mb: 2 }}>
+                Adapted from the {ProjectDrawdownLink} Framework for Climate Solutions
+            </Typography>
+
             <Stack direction="column" spacing={2} sx={{ width: '100%' }}>
                 {Object.keys(DRAWDOWN_SOLUTIONS_HIERARCHY).map((category) => (
                     <Category

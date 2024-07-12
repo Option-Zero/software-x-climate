@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 function DataPage() {
     const { companies } = useContext(CompaniesContext);
 
-    const companiesList = companies.map((company) => {
+    const companyLogos = companies.map((company) => {
         return <CompanyLogo key={company.Name} company={company} />;
     });
 
@@ -17,7 +17,7 @@ function DataPage() {
             <Typography variant="h1" sx={{ mb: 2 }}>
                 Companies
             </Typography>
-            <Stack spacing={2}>{companiesList}</Stack>
+            <Stack spacing={2}>{companyLogos}</Stack>
         </>
     );
 }
