@@ -65,7 +65,7 @@ export const PER_COHORT_LINKS = {
         {
             name: 'Final project ideas form',
             slug: 'final-project-ideas-form',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/shrzdp2oZN0L5hECh',
+            url: 'https://airtable.com/appObqGLfmUbmllPu/shrmZfCGOOkAJcbqh',
         },
         {
             name: 'Final project ideas list',
@@ -80,7 +80,7 @@ export const PER_COHORT_LINKS = {
         {
             name: 'Final projects list',
             slug: 'final-projects-list',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/tblpoo45hmfgNMo3M',
+            url: 'https://airtable.com/appObqGLfmUbmllPu/shrohef8ylxri8sqn',
         },
         {
             name: 'Final project ratings form',
