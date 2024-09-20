@@ -10,42 +10,42 @@ export const PER_COHORT_LINKS = {
         {
             name: 'Hex workspace',
             slug: 'hex-workspace',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/collection/114bec3b-1dca-4d52-9605-3fa087739cc5/templates?sort=project_name%3Aasc&duration=all_time',
         },
         {
             name: 'Assignment 1 Hex Notebook',
             slug: 'assignment-1-hex-notebook',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/29dd4d4e-bf5a-48ee-8d55-106a7730c70a/draft/logic',
         },
         {
             name: 'Assignment 2 Hex Notebook',
             slug: 'assignment-2-hex-notebook',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/ddb3be99-7be5-452b-a079-ce7f90944942/draft/logic',
         },
         {
             name: 'Assignment 3 Hex Notebook',
             slug: 'assignment-3-hex-notebook',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/acea83ea-2618-4bba-9a15-0b64c4296aff/draft/logic',
         },
         {
             name: 'Assignment 4a Hex Notebook',
             slug: 'assignment-4a-hex-notebook',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/1a26f156-4983-430c-aa2e-2ad519e7df20/draft/logic',
         },
         {
             name: 'Assignment 4b Hex Notebook',
             slug: 'assignment-4b-hex-notebook',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/582e4ca6-209f-4f39-85e8-2eba615fa886/draft/logic',
         },
         {
             name: 'Assignment 5 Hex Notebook',
             slug: 'assignment-5-hex-notebook',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/cce3fdb8-d2aa-4f19-a1a6-0b69124180bb/draft/logic',
         },
         {
             name: 'Assignment 5 Fleet Monitoring Notebook',
             slug: 'assignment-5-fleet-monitor',
-            url: '404',
+            url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/b231ab8d-b3cc-4f31-821b-e979facbff06/draft/logic',
         },
         {
             name: 'Cohort Airtable',
