@@ -183,11 +183,19 @@ const Sector = ({
                             />
                         ))}
                         {/* Add a catch-all for unknown/undefined subgroups */}
-                        <CompanyLogos
+                        <Subgroup
+                            key={'other'}
+                            subgroup={'Other'}
+                            color={SECTOR_COLORS[sector]?.medium}
                             companies={companies.filter(
                                 (company) => company['Drawdown subgroup'] == null
                             )}
                         />
+                        {/* <CompanyLogos
+                            companies={companies.filter(
+                                (company) => company['Drawdown subgroup'] == null
+                            )}
+                        /> */}
                     </Stack>
                 </Container>
             </CardContent>
