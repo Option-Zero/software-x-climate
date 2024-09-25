@@ -48,44 +48,39 @@ export const PER_COHORT_LINKS = {
             url: 'https://app.hex.tech/d98cf7a0-1d0f-4e8d-82bd-7911e8769831/hex/b231ab8d-b3cc-4f31-821b-e979facbff06/draft/logic',
         },
         {
-            name: 'Cohort Airtable',
-            slug: 'cohort-airtable',
-            url: 'https://airtable.com/appObqGLfmUbmllPu',
-        },
-        {
             name: 'Fellows list',
             slug: 'fellows-list',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/shrPpuW6pDcTGn4d7',
+            url: 'https://airtable.com/appISFhoXPzMISHio/shrv0ckAA4tppIZG7',
         },
         {
             name: 'Fellows form',
             slug: 'fellows-form',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/pagLeyZtZBaq9as24/form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pagFVNA6H4P1vHOvY/form',
         },
         {
             name: 'Final project ideas form',
             slug: 'final-project-ideas-form',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/shrmZfCGOOkAJcbqh',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pag1osRxpk33p4rKL/form',
         },
         {
             name: 'Final project ideas list',
             slug: 'final-project-ideas-list',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/tbly0mb2eH5ErtzmA',
+            url: 'https://airtable.com/appISFhoXPzMISHio/shrMsqg3fexze9KBh',
         },
         {
             name: 'Final project plans form',
             slug: 'final-project-plans-form',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/shr3AtYuIXDTQm1lG',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pag4wOwxcFEbRrLD7/form',
         },
         {
             name: 'Final projects list',
             slug: 'final-projects-list',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/shrohef8ylxri8sqn',
+            url: 'https://airtable.com/appISFhoXPzMISHio/shrMsqg3fexze9KBh',
         },
         {
             name: 'Final project ratings form',
             slug: 'final-project-ratings-form',
-            url: 'https://airtable.com/appObqGLfmUbmllPu/shrpb0d2vBpACUyCP',
+            url: 'https://airtable.com/appISFhoXPzMISHio/paglKpl0y9a6KL6qA/form',
         },
         {
             name: 'Final project presentation signup',
