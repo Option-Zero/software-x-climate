@@ -57,15 +57,20 @@ export const PER_COHORT_LINKS = {
             slug: 'fellows-form',
             url: 'https://airtable.com/appISFhoXPzMISHio/pagFVNA6H4P1vHOvY/form',
         },
+        // {
+        //     name: 'Final project ideas form',
+        //     slug: 'final-project-ideas-form',
+        //     url: 'https://airtable.com/appISFhoXPzMISHio/pag1osRxpk33p4rKL/form',
+        // },
+        // {
+        //     name: 'Final project ideas list',
+        //     slug: 'final-project-ideas-list',
+        //     url: 'https://airtable.com/appISFhoXPzMISHio/shrPFzQUTLN7gmFSv',
+        // },
         {
-            name: 'Final project ideas form',
-            slug: 'final-project-ideas-form',
-            url: 'https://airtable.com/appISFhoXPzMISHio/pag1osRxpk33p4rKL/form',
-        },
-        {
-            name: 'Final project ideas list',
-            slug: 'final-project-ideas-list',
-            url: 'https://airtable.com/appISFhoXPzMISHio/shrPFzQUTLN7gmFSv',
+            name: 'Final project pitches folder',
+            slug: 'final-project-pitches-folder',
+            url: 'https://drive.google.com/drive/folders/11pHJeFnBhegvhjgFWUq195R1a2N_lGE0?usp=drive_link',
         },
         {
             name: 'Final project plans form',
