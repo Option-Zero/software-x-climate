@@ -1,6 +1,98 @@
-export const CURRENT_COHORT = '2024-10';
+export const CURRENT_COHORT = '2025-02';
 
 export const PER_COHORT_LINKS = {
+    '2025-02': [
+        {
+            name: 'Slido audience participation',
+            slug: 'slido',
+            url: 'https://app.sli.do/event/wkgFiPsXbvs9zfbsCRSbUf',
+        },
+        {
+            name: 'Hex workspace',
+            slug: 'hex-workspace',
+            url: '404',
+        },
+        {
+            name: 'Assignment 1 Hex Notebook',
+            slug: 'assignment-1-hex-notebook',
+            url: '404',
+        },
+        {
+            name: 'Assignment 2 Hex Notebook',
+            slug: 'assignment-2-hex-notebook',
+            url: '404',
+        },
+        {
+            name: 'Assignment 3 Hex Notebook',
+            slug: 'assignment-3-hex-notebook',
+            url: '404',
+        },
+        {
+            name: 'Assignment 4a Hex Notebook',
+            slug: 'assignment-4a-hex-notebook',
+            url: '404',
+        },
+        {
+            name: 'Assignment 4b Hex Notebook',
+            slug: 'assignment-4b-hex-notebook',
+            url: '404',
+        },
+        {
+            name: 'Assignment 5 Hex Notebook',
+            slug: 'assignment-5-hex-notebook',
+            url: '404',
+        },
+        {
+            name: 'Assignment 5 Fleet Monitoring Notebook',
+            slug: 'assignment-5-fleet-monitor',
+            url: '404',
+        },
+        {
+            name: 'Fellows list',
+            slug: 'fellows-list',
+            url: 'https://airtable.com/appISFhoXPzMISHio/shrOESSjK5QbfCPL2',
+        },
+        {
+            name: 'Fellows form',
+            slug: 'fellows-form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pagFVNA6H4P1vHOvY/form',
+        },
+        {
+            name: 'Final project ideas form',
+            slug: 'final-project-ideas-form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pag1osRxpk33p4rKL/form',
+        },
+        {
+            name: 'Final project ideas list',
+            slug: 'final-project-ideas-list',
+            url: 'https://airtable.com/appISFhoXPzMISHio/shrPFzQUTLN7gmFSv',
+        },
+        {
+            name: 'Final project plans form',
+            slug: 'final-project-plans-form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pag4wOwxcFEbRrLD7/form',
+        },
+        {
+            name: 'Final projects list',
+            slug: 'final-projects-list',
+            url: 'https://airtable.com/appISFhoXPzMISHio/shra3qsIoRXPrmT1B',
+        },
+        {
+            name: 'Final project ratings form',
+            slug: 'final-project-ratings-form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/paglKpl0y9a6KL6qA/form',
+        },
+        {
+            name: 'Final project presentation signup',
+            slug: 'final-project-presentation-signup',
+            url: 'https://docs.google.com/spreadsheets/d/1C_U6KaN-nHL80lLgq_TXU1ghZnpfRucnHnM2osROkYI/edit?usp=sharing',
+        },
+        {
+            name: 'End of course survey',
+            slug: 'end-of-course-survey',
+            url: '404',
+        },
+    ],
     '2024-10': [
         {
             name: 'Slido audience participation',
