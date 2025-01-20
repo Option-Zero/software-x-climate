@@ -8,7 +8,6 @@ import {
     CURRENT_COHORT,
     PER_COHORT_LINKS,
     STATIC_LINKS,
-    EXTERNAL_LINKS_PATH,
 } from '../softwareForClimateCourseLinks.js';
 import { Container } from '@mui/material';
 
@@ -23,14 +22,10 @@ type LinkConfig = {
 };
 
 const Links = ({ linkConfigs }: { linkConfigs: LinkConfig[] }) => {
-    const linksListItems = linkConfigs.map(({ name, slug }) => {
+    const linksListItems = linkConfigs.map(({ name, url }) => {
         return (
             <li key={name}>
-                <Link
-                    href={`${EXTERNAL_LINKS_PATH}/${slug}`}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
+                <Link href={url} rel="noopener noreferrer" target="_blank">
                     {name}
                 </Link>
             </li>
