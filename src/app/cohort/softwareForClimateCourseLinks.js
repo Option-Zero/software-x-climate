@@ -172,7 +172,7 @@ export const PER_COHORT_LINKS = {
         {
             name: 'End of course survey',
             slug: 'end-of-course-survey',
-            url: '404',
+            url: 'https://atisundar.typeform.com/to/XeSjSDUn',
         },
     ],
     '2024-10': [
