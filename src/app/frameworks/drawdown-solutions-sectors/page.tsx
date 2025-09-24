@@ -230,7 +230,7 @@ const CompanyLogos = ({ companies }: { companies: Company[] }) => {
     ));
 
     return (
-        <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap' }}>
+        <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', alignItems: 'center' }}>
             {companyLogos}
         </Stack>
     );
