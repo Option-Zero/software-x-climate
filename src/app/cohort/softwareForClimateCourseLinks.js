@@ -1,7 +1,7 @@
-export const CURRENT_COHORT = '2025-02';
+export const CURRENT_COHORT = '2025-09';
 
 export const PER_COHORT_LINKS = {
-    '2025-04': [
+    '2025-09': [
         {
             name: 'Slido audience participation',
             slug: 'slido',
