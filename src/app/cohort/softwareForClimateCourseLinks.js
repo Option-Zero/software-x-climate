@@ -464,6 +464,11 @@ export const STATIC_LINKS = [
         slug: 'climate-data-sources',
         url: 'https://www.notion.so/terra-dot-do/Useful-Data-Sources-for-Climate-Solutions-fe03dac0418344f9a4c9f35a81be1588',
     },
+    {
+        name: 'Resilience framework',
+        slug: 'resilience-framework',
+        url: 'https://www.figma.com/board/5sf6q9P4Xa5mvx5v4JLQww/Climate-Resilience-Framework',
+    },
 ];
 
 export const EXTERNAL_LINKS_PATH = '/links';
