@@ -452,7 +452,8 @@ export const STATIC_LINKS = [
     {
         name: 'Office hours',
         slug: 'office-hours',
-        url: 'https://calendly.com/option-zero/office-hours',
+        // url: 'https://calendly.com/option-zero/office-hours',
+        url: 'https://calendar.app.google/wB2W2MYRXUiNeV1v8',
     },
     {
         name: 'Final projects gallery',
