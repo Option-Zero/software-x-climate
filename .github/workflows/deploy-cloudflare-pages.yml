@@ -73,11 +73,11 @@ jobs:
           echo "Testing Cloudflare API authentication..."
           echo ""
 
-          # First, try a simple user API call that works with any valid token
-          echo "→ Testing with /user endpoint..."
+          # Use the correct token verification endpoint with account ID
+          echo "→ Verifying token with account $CLOUDFLARE_ACCOUNT_ID..."
           response=$(curl -s -w "\nHTTP_CODE:%{http_code}" \
             -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-            "https://api.cloudflare.com/v4/user")
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/tokens/verify")
 
           http_code=$(echo "$response" | grep "HTTP_CODE:" | cut -d':' -f2)
           body=$(echo "$response" | sed '/HTTP_CODE:/d')
@@ -89,10 +89,9 @@ jobs:
           if [ "$http_code" = "200" ]; then
             echo "✅ API token is valid and working!"
           elif [ "$http_code" = "404" ]; then
-            echo "❌ Got 404 error - This usually means:"
+            echo "❌ Got 404 error - This could mean:"
+            echo "   • The account ID is incorrect"
             echo "   • You're using an API KEY instead of an API TOKEN"
-            echo "   • API Keys use different authentication (X-Auth-Email + X-Auth-Key headers)"
-            echo "   • API Tokens use Bearer authentication"
             echo ""
             echo "📝 How to create an API Token (not API Key):"
             echo "   1. Go to https://dash.cloudflare.com/profile/api-tokens"
@@ -106,6 +105,7 @@ jobs:
             echo "   • Token may be expired or invalid"
             echo "   • Check that you copied the entire token"
             echo "   • No extra spaces before/after the token"
+            echo "   • Token may not have access to this account"
             exit 1
           else
             echo "❌ Unexpected response code: $http_code"
@@ -113,42 +113,45 @@ jobs:
           fi
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Debug - Check API token permissions
         run: |
           echo "Checking API token permissions..."
           echo ""
 
-          # Get token details with pretty printing
+          # Get token details with pretty printing using correct endpoint
           response=$(curl -s \
             -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-            "https://api.cloudflare.com/v4/user/tokens/verify")
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/tokens/verify")
 
           echo "Full token verification response:"
           echo "$response" | jq '.' || echo "$response"
           echo ""
 
-          # Extract specific permission info
-          echo "Token permissions:"
-          echo "$response" | jq -r '.result.policies // []' || echo "Could not parse permissions"
-          echo ""
+          # Check if the token is valid by checking for success field
+          is_success=$(echo "$response" | jq -r '.success // false')
 
-          # Check for Cloudflare Pages permission specifically
-          has_pages_permission=$(echo "$response" | jq -r '.result.policies[]? | select(.effect == "allow" and (.permission_groups[]? | contains("Pages")))')
+          if [ "$is_success" = "true" ]; then
+            echo "✅ Token is valid for account $CLOUDFLARE_ACCOUNT_ID"
 
-          if [ -n "$has_pages_permission" ]; then
-            echo "✅ Token has Cloudflare Pages permissions"
+            # Extract token status
+            status=$(echo "$response" | jq -r '.result.status // "unknown"')
+            echo "Token status: $status"
+
+            # Show token ID if available
+            token_id=$(echo "$response" | jq -r '.result.id // "N/A"')
+            echo "Token ID: $token_id"
           else
-            echo "⚠️  Token might not have Cloudflare Pages permissions"
-            echo "   Required permission: Account > Cloudflare Pages > Edit"
+            echo "⚠️  Token verification returned success=false"
+            echo "Check the error messages above"
           fi
 
-          # Test account access
           echo ""
           echo "Testing account access..."
           account_response=$(curl -s -w "\nHTTP_CODE:%{http_code}" \
             -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-            "https://api.cloudflare.com/v4/accounts/$CLOUDFLARE_ACCOUNT_ID")
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID")
 
           account_http_code=$(echo "$account_response" | grep "HTTP_CODE:" | cut -d':' -f2)
           account_body=$(echo "$account_response" | sed '/HTTP_CODE:/d')
@@ -158,6 +161,10 @@ jobs:
 
           if [ "$account_http_code" = "200" ]; then
             echo "✅ Can access account $CLOUDFLARE_ACCOUNT_ID"
+
+            # Show account name if available
+            account_name=$(echo "$account_body" | jq -r '.result.name // "N/A"')
+            echo "Account name: $account_name"
           else
             echo "❌ Cannot access account $CLOUDFLARE_ACCOUNT_ID"
             echo "   Check that the token has permissions for this specific account"
