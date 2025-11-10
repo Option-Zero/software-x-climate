@@ -103,10 +103,18 @@ This option uses Cloudflare's automatic Git integration. A post-build script ens
    - **Root directory**: (leave blank)
    - **Node version**: 20 or later
 
-3. **Set Environment Variables**
+3. **Set Environment Variables & Compatibility Flags**
    - In the Cloudflare Pages project settings, go to **Settings** > **Environment variables**
    - Add the following variable:
      - `AIRTABLE_API_KEY`: Your Airtable API key (mark as secret)
+
+   - **IMPORTANT**: Go to **Settings** > **Functions**
+   - Scroll to **Compatibility flags**
+   - Add the following flags:
+     - `nodejs_compat`
+     - `global_fetch_strictly_public`
+   - Set **Compatibility date** to `2024-09-23` or later
+   - Click **Save**
 
 4. **Deploy**
    - Click **Save and Deploy**
