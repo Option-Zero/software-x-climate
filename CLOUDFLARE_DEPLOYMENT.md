@@ -45,8 +45,8 @@ The site will be available at `http://localhost:3000`.
    - Authorize Cloudflare to access the repository
 
 2. **Configure Build Settings**
-   - **Framework preset**: Next.js
-   - **Build command**: `npx opennextjs-cloudflare build`
+   - **Framework preset**: None (or leave as custom)
+   - **Build command**: `npx opennextjs-cloudflare build && bash scripts/cloudflare-postbuild.sh`
    - **Build output directory**: `.open-next/assets`
    - **Root directory**: (leave blank)
    - **Node version**: 20 or later
