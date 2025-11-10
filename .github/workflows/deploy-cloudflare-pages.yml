@@ -32,6 +32,59 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Debug - Check environment variables
+        run: |
+          echo "Checking Cloudflare credentials..."
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "❌ CLOUDFLARE_API_TOKEN is not set!"
+          else
+            echo "✅ CLOUDFLARE_API_TOKEN is set (length: ${#CLOUDFLARE_API_TOKEN})"
+            echo "   First 4 chars: ${CLOUDFLARE_API_TOKEN:0:4}..."
+            echo "   Last 4 chars: ...${CLOUDFLARE_API_TOKEN: -4}"
+          fi
+
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "❌ CLOUDFLARE_ACCOUNT_ID is not set!"
+          else
+            echo "✅ CLOUDFLARE_ACCOUNT_ID is set: $CLOUDFLARE_ACCOUNT_ID"
+          fi
+
+          if [ -z "$AIRTABLE_API_KEY" ]; then
+            echo "❌ AIRTABLE_API_KEY is not set!"
+          else
+            echo "✅ AIRTABLE_API_KEY is set (length: ${#AIRTABLE_API_KEY})"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+
+      - name: Debug - Test Cloudflare API authentication
+        run: |
+          echo "Testing Cloudflare API authentication..."
+          response=$(curl -s -w "\nHTTP_CODE:%{http_code}" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/v4/user/tokens/verify")
+
+          http_code=$(echo "$response" | grep "HTTP_CODE:" | cut -d':' -f2)
+          body=$(echo "$response" | sed '/HTTP_CODE:/d')
+
+          echo "Response code: $http_code"
+          echo "Response body: $body"
+
+          if [ "$http_code" = "200" ]; then
+            echo "✅ API token is valid!"
+          else
+            echo "❌ API token validation failed!"
+            echo "This usually means:"
+            echo "  1. The token is incorrect or expired"
+            echo "  2. The token doesn't have required permissions"
+            echo "  3. The token format is wrong"
+            exit 1
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
       - name: Build and Deploy to Cloudflare Pages
         run: pnpm run pages:deploy
         env:
