@@ -35,6 +35,21 @@ The site will be available at `http://localhost:3000`.
 
 ## Deployment to Cloudflare Pages
 
+**Choose your deployment method:**
+
+| Feature | GitHub Actions (Option 1) | Git Integration (Option 2) | Manual CLI (Option 3) |
+|---------|---------------------------|---------------------------|----------------------|
+| **Setup complexity** | Medium | Easy | Easy |
+| **Auto-deploy on push** | ✅ Yes | ✅ Yes | ❌ Manual |
+| **Preview deployments** | ✅ Yes | ✅ Yes | ❌ No |
+| **Build visibility** | GitHub Actions logs | Cloudflare Pages logs | Local terminal |
+| **Secrets management** | GitHub Secrets | Cloudflare Env Vars | Local .dev.vars |
+| **Best for** | Teams, CI/CD | Simple setup | Testing, one-off deploys |
+
+**Recommendation:** Use GitHub Actions (Option 1) for production deployments with better control and visibility. Use Git Integration (Option 2) for simpler setup if you prefer Cloudflare-native tooling.
+
+---
+
 ### Option 1: Automatic Deployment via GitHub Actions (Recommended)
 
 This repository includes a GitHub Actions workflow that automatically deploys to Cloudflare Pages on every push to `main` and creates preview deployments for pull requests.
@@ -68,7 +83,41 @@ This repository includes a GitHub Actions workflow that automatically deploys to
    - Check the **Actions** tab in GitHub to monitor deployment progress
    - Your site will be available at `https://software-x-climate.pages.dev`
 
-### Option 2: Manual Deployment via CLI
+### Option 2: Cloudflare Pages Git Integration
+
+This option uses Cloudflare's automatic Git integration. A post-build script ensures all worker dependencies are properly bundled.
+
+**Setup Steps:**
+
+1. **Create Cloudflare Pages Project**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - Navigate to **Workers & Pages** > **Pages**
+   - Click **Create a project** > **Connect to Git**
+   - Select your GitHub repository
+   - Authorize Cloudflare to access the repository
+
+2. **Configure Build Settings**
+   - **Framework preset**: None (or leave as custom)
+   - **Build command**: `pnpm run pages:build:git`
+   - **Build output directory**: `.open-next/assets`
+   - **Root directory**: (leave blank)
+   - **Node version**: 20 or later
+
+3. **Set Environment Variables**
+   - In the Cloudflare Pages project settings, go to **Settings** > **Environment variables**
+   - Add the following variable:
+     - `AIRTABLE_API_KEY`: Your Airtable API key (mark as secret)
+
+4. **Deploy**
+   - Click **Save and Deploy**
+   - Cloudflare will automatically build and deploy your site
+   - Future pushes to `main` will trigger automatic deployments
+   - Preview deployments are created for all pull requests
+
+**How it works:**
+The `pages:build:git` script runs the OpenNext build and then copies the worker file and all its dependencies into the `.open-next/assets` directory, allowing Cloudflare's bundler to find everything it needs.
+
+### Option 3: Manual Deployment via CLI
 
 1. **Authenticate with Wrangler**
 
