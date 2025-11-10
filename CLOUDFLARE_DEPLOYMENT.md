@@ -35,32 +35,38 @@ The site will be available at `http://localhost:3000`.
 
 ## Deployment to Cloudflare Pages
 
-### Option 1: Automatic Deployment via GitHub (Recommended)
+### Option 1: Automatic Deployment via GitHub Actions (Recommended)
 
-1. **Connect Repository to Cloudflare Pages**
+This repository includes a GitHub Actions workflow that automatically deploys to Cloudflare Pages on every push to `main` and creates preview deployments for pull requests.
+
+**Setup Steps:**
+
+1. **Get Cloudflare API Credentials**
+   - Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - Go to **My Profile** > **API Tokens**
+   - Create a new API token with **"Cloudflare Pages — Edit"** permissions
+   - Note your **Account ID** from the Workers & Pages section
+
+2. **Add GitHub Secrets**
+   - Go to your GitHub repository **Settings** > **Secrets and variables** > **Actions**
+   - Click **New repository secret** and add the following:
+     - `CLOUDFLARE_API_TOKEN`: Your API token from step 1
+     - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+     - `AIRTABLE_API_KEY`: Your Airtable API key
+
+3. **Create Cloudflare Pages Project**
    - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-   - Navigate to **Workers & Pages** > **Pages**
-   - Click **Create a project** > **Connect to Git**
-   - Select your GitHub repository
-   - Authorize Cloudflare to access the repository
-
-2. **Configure Build Settings**
-   - **Framework preset**: None (or leave as custom)
-   - **Build command**: `npx opennextjs-cloudflare build && bash scripts/cloudflare-postbuild.sh`
-   - **Build output directory**: `.open-next/assets`
-   - **Root directory**: (leave blank)
-   - **Node version**: 20 or later
-
-3. **Set Environment Variables**
-   - In the Cloudflare Pages project settings, go to **Settings** > **Environment variables**
-   - Add the following variable:
-     - `AIRTABLE_API_KEY`: Your Airtable API key (use secret mode)
+   - Navigate to **Workers & Pages** > **Create**
+   - Click **Pages** > **Create a project**
+   - Choose **Direct Upload** (not Git integration)
+   - Name your project: `software-x-climate`
+   - You don't need to upload anything - GitHub Actions will handle deployments
 
 4. **Deploy**
-   - Click **Save and Deploy**
-   - Cloudflare will automatically build and deploy your site
-   - Future pushes to the main branch will trigger automatic deployments
-   - Preview deployments are created for all pull requests
+   - Push to the `main` branch or merge a PR
+   - GitHub Actions will automatically build and deploy
+   - Check the **Actions** tab in GitHub to monitor deployment progress
+   - Your site will be available at `https://software-x-climate.pages.dev`
 
 ### Option 2: Manual Deployment via CLI
 

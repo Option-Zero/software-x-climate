@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "prettier --write . && eslint --fix",
     "prepare": "husky",
-    "pages:build": "npx opennextjs-cloudflare build && bash scripts/cloudflare-postbuild.sh",
+    "pages:build": "npx opennextjs-cloudflare build",
     "pages:preview": "npm run pages:build && npx opennextjs-cloudflare preview",
     "pages:deploy": "npm run pages:build && npx opennextjs-cloudflare deploy"
   },
