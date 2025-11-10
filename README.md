@@ -26,3 +26,16 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Deployment
+
+This project is configured for deployment to **Cloudflare Pages**, which provides:
+
+- ✅ Free hosting for teams (unlimited developers)
+- ✅ 500 builds/month on free tier
+- ✅ Unlimited bandwidth
+- ✅ Auto-deploy on push to GitHub
+- ✅ Preview deployments for pull requests
+- ✅ Support for Next.js server-side features (API routes, redirects)
+
+See [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md) for complete deployment instructions.

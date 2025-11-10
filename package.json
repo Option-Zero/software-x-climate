@@ -8,13 +8,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --write . && eslint --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pages:build": "npx opennextjs-cloudflare build",
+    "pages:preview": "npm run pages:build && npx opennextjs-cloudflare preview",
+    "pages:deploy": "npm run pages:build && npx opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.16",
     "@mui/material": "^5.15.16",
+    "@opennextjs/cloudflare": "^1.11.1",
     "airtable": "^0.12.2",
     "next": "14.2.3",
     "react": "^18.3.1",
@@ -35,7 +39,8 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "wrangler": "^4.46.0"
   },
   "husky": {
     "hooks": {
