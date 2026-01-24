@@ -83,7 +83,7 @@ export default function ProjectCard({
                                     <a
                                         href={`#${anchorId}`}
                                         onClick={handleCopyLink}
-                                        className="inline-flex items-center p-1 hover:bg-gray-200 rounded transition-colors align-middle"
+                                        className="inline-flex items-center p-1 hover:bg-gray-200 rounded transition-colors align-baseline"
                                         title={
                                             copied ? 'Copied!' : 'Link to project (click to copy)'
                                         }
