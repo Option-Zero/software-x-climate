@@ -34,7 +34,9 @@ AIRTABLE_API_KEY=your_api_key_here
 
 1. Visit https://airtable.com/create/tokens
 2. Create a new personal access token
-3. Grant it access to the bases you need (for this project: `appiTlFyRhnNrKlLh`)
+3. Grant it access to the following bases:
+   - `appiTlFyRhnNrKlLh` (Projects - used by `/showcase`)
+   - `app97sUZfBc4P5fgr` (Companies - used by `/frameworks`)
 4. Copy the token and add it to your `.env` file
 
 ## Run server
