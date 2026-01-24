@@ -35,7 +35,7 @@ export default function CohortSection({
                 <div className="mb-12">
                     <div className="flex items-center gap-2 mb-6">
                         <h3 className="text-xl font-semibold text-gray-700">Superlative Winners</h3>
-                        <InfoTooltip content="Superlatives are assigned within each cohort by a vote of all the students in that cohort." />
+                        <InfoTooltip content="At final project demo day, students vote to award superlatives to their peers." />
                     </div>
                     <div className="space-y-4">
                         {projects.superlative.map((project) => (
