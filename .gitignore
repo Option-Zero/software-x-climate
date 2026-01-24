@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.envtest-results/
+playwright-report/
+take-screenshot.js
+test-airtable.js
+
+*storybook.log
+storybook-static

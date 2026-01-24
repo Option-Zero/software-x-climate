@@ -1,3 +1,9 @@
+# Software X Climate
+
+This is a utility and demo site supporting the [Software For Climate](https://www.terra.do/climate-change-courses/software-for-climate/) course by [Option Zero](optionzero.co) and [Terra.do](terra.do).
+
+The site hosts various frontends used during the class and referring to the class.
+
 # Developing
 
 ## Prerequesites
