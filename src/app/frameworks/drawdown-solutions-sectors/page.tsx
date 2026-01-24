@@ -8,6 +8,7 @@ import { CompaniesContext, Company } from '@/app/providers';
 
 import CompanyLogo from '@/app/_components/CompanyLogo';
 import Container from '@mui/material/Container';
+import LoadingSkeleton from './LoadingSkeleton';
 
 const bebas = Bebas_Neue({
     weight: ['400'],
@@ -93,7 +94,11 @@ const ProjectDrawdownLink = (
 );
 
 export default function DrawdownSolutionsSectors() {
-    const { companies } = useContext(CompaniesContext);
+    const { companies, loading } = useContext(CompaniesContext);
+
+    if (loading) {
+        return <LoadingSkeleton />;
+    }
 
     return (
         <Container maxWidth="xl">

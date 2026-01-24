@@ -27,7 +27,7 @@ export default function CohortSection({
     });
 
     return (
-        <section className="mb-16">
+        <section id={`cohort-${cohort}`} className="mb-16 scroll-mt-24">
             <h2 className="text-3xl font-bold mb-8 text-gray-800">{cohort} Cohort</h2>
 
             {/* Superlative projects section */}

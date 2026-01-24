@@ -5,6 +5,7 @@ import { Project } from '@/types/project';
 import { groupProjectsByCohort } from '@/lib/utils';
 import Header from './components/Header';
 import CohortSection from './components/CohortSection';
+import CohortNavigation from './components/CohortNavigation';
 import Footer from './components/Footer';
 import LoadingSkeleton from './components/LoadingSkeleton';
 
@@ -67,17 +68,17 @@ export default function ShowcasePage() {
         document.title = 'Projects Showcase - Software for Climate';
     }, []);
 
-    if (loading) {
-        return <LoadingSkeleton />;
-    }
-
     const groupedProjects = groupProjectsByCohort(projects);
+    const cohorts = groupedProjects.map((g) => g.cohort);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-blue-50">
             <Header />
+            {!loading && <CohortNavigation cohorts={cohorts} />}
             <main className="container mx-auto px-4 py-8 max-w-7xl">
-                {groupedProjects.length === 0 ? (
+                {loading ? (
+                    <LoadingSkeleton />
+                ) : groupedProjects.length === 0 ? (
                     <div className="text-center py-12">
                         <p className="text-gray-600 text-lg">No projects available at this time.</p>
                     </div>
