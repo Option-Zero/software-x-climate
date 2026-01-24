@@ -61,11 +61,20 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                     >
                                         Option Zero
                                     </a>{' '}
+                                    and{' '}
+                                    <a
+                                        href="https://terra.do"
+                                        className="text-blue-600 hover:text-blue-700"
+                                    >
+                                        Terra.do
+                                    </a>{' '}
                                     that teaches students about applications at the intersection of
-                                    software and climate change. Students learn frameworks for
-                                    understanding climate solutions, explore existing climate tech
-                                    companies, and discover how their technical skills can
-                                    contribute to climate action.
+                                    software and climate change.
+                                </p>
+                                <p className="text-gray-700 mt-2">
+                                    Students learn frameworks for understanding climate solutions,
+                                    explore existing climate tech companies, and discover how their
+                                    technical skills can contribute to climate action.
                                 </p>
                             </section>
 
@@ -93,7 +102,7 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                         <div className="text-2xl">🛠️</div>
                                         <div>
                                             <p className="font-medium text-gray-800">
-                                                Weeks 7-8: Build
+                                                Weeks 7–8: Build
                                             </p>
                                             <p className="text-sm text-gray-600">
                                                 Students spend 2 weeks building a capstone project
