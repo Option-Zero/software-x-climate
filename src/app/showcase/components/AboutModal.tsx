@@ -53,12 +53,18 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                     What is Software for Climate?
                                 </h3>
                                 <p className="text-gray-700 leading-relaxed">
-                                    Software for Climate is an 8-week online course that teaches
-                                    students about applications at the intersection of software and
-                                    climate change. Students learn frameworks for understanding
-                                    climate solutions, explore existing climate tech companies, and
-                                    discover how their technical skills can contribute to climate
-                                    action.
+                                    Software for Climate is an 8-week online course by{' '}
+                                    <a
+                                        href="https://optionzero.co"
+                                        className="text-blue-600 hover:text-blue-700"
+                                    >
+                                        Option Zero
+                                    </a>{' '}
+                                    that teaches students about applications at the intersection of
+                                    software and climate change. Students learn frameworks for
+                                    understanding climate solutions, explore existing climate tech
+                                    companies, and discover how their technical skills can
+                                    contribute to climate action.
                                 </p>
                             </section>
 
@@ -77,7 +83,8 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                             <p className="text-sm text-gray-600">
                                                 Students explore climate frameworks, analyze
                                                 existing solutions, and identify opportunities for
-                                                software to make an impact.
+                                                software to make an impact. They get their hands
+                                                dirty with coding exercises and mini-projects.
                                             </p>
                                         </div>
                                     </div>
@@ -90,8 +97,7 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                             <p className="text-sm text-gray-600">
                                                 Students spend 2 weeks building a capstone project
                                                 that combines course concepts with personal
-                                                expertise and interests. Projects range from data
-                                                visualizations to web apps to research analyses.
+                                                expertise and interests.
                                             </p>
                                         </div>
                                     </div>
@@ -121,13 +127,9 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                 </p>
                                 <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
                                     <li>Best Overall</li>
-                                    <li>Most Interesting</li>
+                                    <li>Most Inspiring</li>
                                     <li>Best Execution</li>
                                 </ul>
-                                <p className="text-gray-600 text-sm mt-3">
-                                    When multiple projects receive the same number of votes, they
-                                    share the award (indicated by &ldquo;X-way tie&rdquo;).
-                                </p>
                             </section>
 
                             {/* Learn More */}

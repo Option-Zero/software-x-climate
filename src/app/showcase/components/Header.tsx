@@ -10,14 +10,14 @@ export default function Header({ onOpenAbout }: Props) {
                     Software for Climate Final Projects
                 </h1>
                 <p className="text-lg md:text-xl mb-6 text-blue-100">
-                    Showcasing capstone projects from our alumni
+                    Showcasing 2-week capstone projects from our alumni
                 </p>
                 <div className="flex gap-4 flex-wrap justify-center">
                     <button
                         onClick={onOpenAbout}
                         className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition"
                     >
-                        Learn About the Course →
+                        More About the Course and Projects →
                     </button>
                 </div>
             </div>
