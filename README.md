@@ -22,6 +22,21 @@ nvm use
 pnpm install
 ```
 
+## Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```bash
+AIRTABLE_API_KEY=your_api_key_here
+```
+
+### Getting an Airtable API Key
+
+1. Visit https://airtable.com/create/tokens
+2. Create a new personal access token
+3. Grant it access to the bases you need (for this project: `appiTlFyRhnNrKlLh`)
+4. Copy the token and add it to your `.env` file
+
 ## Run server
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
