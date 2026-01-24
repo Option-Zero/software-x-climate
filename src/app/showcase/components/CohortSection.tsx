@@ -49,7 +49,7 @@ export default function CohortSection({
                 <div>
                     <h3 className="text-xl font-semibold text-gray-700 mb-6">Other Projects</h3>
                     {/* Grid layout on larger screens, single column on mobile */}
-                    <div className="grid grid-cols-1 gap-4 auto-rows-fr lg:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                         {projects.regular.map((project) => {
                             const isExpanded = expandedProjectId === project.id;
                             return (

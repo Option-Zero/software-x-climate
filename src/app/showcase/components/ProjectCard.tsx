@@ -56,36 +56,32 @@ export default function ProjectCard({
                 >
                     <div className="flex items-center gap-4 flex-1 min-w-0">
                         {/* Thumbnail when collapsed */}
-                        <div
-                            className={`flex-shrink-0 w-16 h-16 rounded overflow-hidden transition-all duration-300 ${
-                                !isExpanded && heroImage && !alwaysExpanded
-                                    ? 'opacity-100 mr-0'
-                                    : 'opacity-0 w-0 -mr-4'
-                            }`}
-                        >
-                            {heroImage && (
+                        {!isExpanded && heroImage && !alwaysExpanded && (
+                            <div className="flex-shrink-0 w-16 h-16 rounded overflow-hidden animate-in fade-in slide-in-from-left-2 duration-300">
                                 <img
                                     src={heroImage.thumbnails.small.url}
                                     alt={project.Name}
                                     className="w-16 h-16 object-cover"
                                 />
-                            )}
-                        </div>
+                            </div>
+                        )}
 
                         <div className="flex-1 min-w-0">
                             <div className="flex items-start gap-3 mb-2 flex-wrap">
                                 <h3 className="text-xl font-semibold text-gray-800">
                                     {project.Name}
                                 </h3>
-                                <button
+                                <a
+                                    href={`#${anchorId}`}
                                     onClick={handleCopyLink}
                                     className="flex-shrink-0 p-1 hover:bg-gray-200 rounded transition-colors"
-                                    title={copied ? 'Copied!' : 'Copy link to project'}
+                                    title={copied ? 'Copied!' : 'Link to project (click to copy)'}
+                                    aria-label="Link to project"
                                 >
                                     <LinkIcon
                                         className={`w-4 h-4 ${copied ? 'text-green-600' : 'text-gray-400'}`}
                                     />
-                                </button>
+                                </a>
                                 {showSuperlative && project.Superlative && (
                                     <div className="flex gap-2 flex-wrap">
                                         {project.Superlative.map((badge) => (
