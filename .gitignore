@@ -29,6 +29,9 @@ yarn-error.log*
 .env
 .env*.local
 
+# package managers (project uses pnpm)
+package-lock.json
+
 # vercel
 .vercel
 
