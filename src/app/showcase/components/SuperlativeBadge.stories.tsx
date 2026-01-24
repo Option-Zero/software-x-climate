@@ -42,11 +42,25 @@ export const TwoWayTie: Story = {
         label: 'Best Overall',
         count: 2,
     },
+    parameters: {
+        docs: {
+            description: {
+                story: 'Hover to see tooltip explaining the tie.',
+            },
+        },
+    },
 };
 
 export const ThreeWayTie: Story = {
     args: {
         label: 'Most Interesting',
         count: 3,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'Hover to see tooltip explaining the 3-way tie.',
+            },
+        },
     },
 };

@@ -45,15 +45,27 @@ function parseCohortDate(cohort: string | undefined): Date {
 }
 
 /**
- * Sort superlative projects with "Best Overall" first
+ * Sort superlative projects with "Best Overall" first, then non-ties before ties
  */
-function sortSuperlativeProjects(projects: Project[]): Project[] {
+function sortSuperlativeProjects(
+    projects: Project[],
+    superlativeCounts: Record<string, number>
+): Project[] {
     return projects.sort((a, b) => {
         const aHasBestOverall = a.Superlative?.includes('Best Overall');
         const bHasBestOverall = b.Superlative?.includes('Best Overall');
 
+        // First priority: Best Overall
         if (aHasBestOverall && !bHasBestOverall) return -1;
         if (!aHasBestOverall && bHasBestOverall) return 1;
+
+        // Second priority: Non-tied awards before tied awards
+        const aHasTie = a.Superlative?.some((award) => superlativeCounts[award] > 1);
+        const bHasTie = b.Superlative?.some((award) => superlativeCounts[award] > 1);
+
+        if (!aHasTie && bHasTie) return -1;
+        if (aHasTie && !bHasTie) return 1;
+
         return 0;
     });
 }
@@ -85,13 +97,24 @@ export function groupProjectsByCohort(projects: Project[]): GroupedProjects[] {
     });
 
     // Create grouped structure with superlative vs regular
-    return sortedCohorts.map((cohort) => ({
-        cohort,
-        projects: {
-            superlative: sortSuperlativeProjects(
-                grouped.get(cohort)!.filter((p) => p['Has Superlative'])
-            ),
-            regular: grouped.get(cohort)!.filter((p) => !p['Has Superlative']),
-        },
-    }));
+    return sortedCohorts.map((cohort) => {
+        const cohortProjects = grouped.get(cohort)!;
+        const superlativeProjects = cohortProjects.filter((p) => p['Has Superlative']);
+
+        // Calculate superlative counts for this cohort
+        const superlativeCounts: Record<string, number> = {};
+        superlativeProjects.forEach((project) => {
+            project.Superlative?.forEach((award) => {
+                superlativeCounts[award] = (superlativeCounts[award] || 0) + 1;
+            });
+        });
+
+        return {
+            cohort,
+            projects: {
+                superlative: sortSuperlativeProjects(superlativeProjects, superlativeCounts),
+                regular: cohortProjects.filter((p) => !p['Has Superlative']),
+            },
+        };
+    });
 }
