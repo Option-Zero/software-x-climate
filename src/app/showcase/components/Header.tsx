@@ -1,4 +1,8 @@
-export default function Header() {
+type Props = {
+    onOpenAbout: () => void;
+};
+
+export default function Header({ onOpenAbout }: Props) {
     return (
         <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white">
             <div className="container mx-auto px-4 py-12 max-w-7xl text-center">
@@ -9,14 +13,12 @@ export default function Header() {
                     Showcasing capstone projects from our alumni
                 </p>
                 <div className="flex gap-4 flex-wrap justify-center">
-                    <a
-                        href="https://www.terra.do/climate-change-courses/software-for-climate/?utm_source=showcase&utm_medium=header&utm_campaign=final_projects"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <button
+                        onClick={onOpenAbout}
                         className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition"
                     >
                         Learn About the Course →
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

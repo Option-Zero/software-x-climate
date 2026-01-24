@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { Project } from '@/types/project';
 import { groupProjectsByCohort } from '@/lib/utils';
 import Header from './components/Header';
-import IntroSection from './components/IntroSection';
 import CohortSection from './components/CohortSection';
 import CohortNavigation from './components/CohortNavigation';
 import AboutModal from './components/AboutModal';
@@ -15,6 +14,7 @@ export default function ShowcasePage() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
     const [expandedProjectId, setExpandedProjectId] = useState<string | null>(null);
+    const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
 
     useEffect(() => {
         async function fetchAndHandleAnchor() {
@@ -70,8 +70,7 @@ export default function ShowcasePage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-blue-50">
-            <Header />
-            <IntroSection />
+            <Header onOpenAbout={() => setIsAboutModalOpen(true)} />
             {!loading && <CohortNavigation cohorts={cohorts} />}
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 {loading ? (
@@ -93,7 +92,11 @@ export default function ShowcasePage() {
                 )}
             </main>
             <Footer />
-            <AboutModal />
+            <AboutModal
+                isOpen={isAboutModalOpen}
+                onOpen={() => setIsAboutModalOpen(true)}
+                onClose={() => setIsAboutModalOpen(false)}
+            />
         </div>
     );
 }

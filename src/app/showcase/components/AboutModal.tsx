@@ -1,16 +1,19 @@
 'use client';
 
-import { useState } from 'react';
 import { X, Info } from 'lucide-react';
 
-export default function AboutModal() {
-    const [isOpen, setIsOpen] = useState(false);
+type Props = {
+    isOpen: boolean;
+    onOpen: () => void;
+    onClose: () => void;
+};
 
+export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
     return (
         <>
             {/* Floating About Button */}
             <button
-                onClick={() => setIsOpen(true)}
+                onClick={() => (isOpen ? onClose() : onOpen())}
                 className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition-all z-40 flex items-center gap-2"
                 aria-label="About these projects"
             >
@@ -22,7 +25,7 @@ export default function AboutModal() {
             {isOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
-                    onClick={() => setIsOpen(false)}
+                    onClick={onClose}
                 >
                     <div
                         className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
@@ -34,7 +37,7 @@ export default function AboutModal() {
                                 About These Projects
                             </h2>
                             <button
-                                onClick={() => setIsOpen(false)}
+                                onClick={onClose}
                                 className="text-gray-400 hover:text-gray-600 transition-colors"
                                 aria-label="Close"
                             >
@@ -86,7 +89,7 @@ export default function AboutModal() {
                                             </p>
                                             <p className="text-sm text-gray-600">
                                                 Students spend 2 weeks building a capstone project
-                                                that combines course concepts with their own
+                                                that combines course concepts with personal
                                                 expertise and interests. Projects range from data
                                                 visualizations to web apps to research analyses.
                                             </p>
