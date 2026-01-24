@@ -63,11 +63,6 @@ export default function ShowcasePage() {
         fetchAndHandleAnchor();
     }, []);
 
-    // Set page title
-    useEffect(() => {
-        document.title = 'Projects Showcase - Software for Climate';
-    }, []);
-
     const groupedProjects = groupProjectsByCohort(projects);
     const cohorts = groupedProjects.map((g) => g.cohort);
 
