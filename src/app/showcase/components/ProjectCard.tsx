@@ -39,6 +39,14 @@ export default function ProjectCard({
         navigator.clipboard.writeText(url);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+
+        // Expand the project if it's not already expanded
+        if (!isExpanded && !alwaysExpanded) {
+            onToggle();
+        }
+
+        // Update the URL hash
+        window.history.replaceState(null, '', `#${anchorId}`);
     };
 
     return (
