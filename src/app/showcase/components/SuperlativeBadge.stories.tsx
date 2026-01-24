@@ -36,3 +36,17 @@ export const UnknownSuperlative: Story = {
         label: 'Some Other Award',
     },
 };
+
+export const TwoWayTie: Story = {
+    args: {
+        label: 'Best Overall',
+        count: 2,
+    },
+};
+
+export const ThreeWayTie: Story = {
+    args: {
+        label: 'Most Interesting',
+        count: 3,
+    },
+};

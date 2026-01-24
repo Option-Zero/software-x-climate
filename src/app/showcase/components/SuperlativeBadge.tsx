@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 type Props = {
     label: string;
+    count?: number;
 };
 
 const BADGE_COLORS: Record<string, string> = {
@@ -13,9 +14,12 @@ const BADGE_COLORS: Record<string, string> = {
     default: 'bg-green-100 text-green-800 border-green-300',
 };
 
-export default function SuperlativeBadge({ label }: Props) {
+export default function SuperlativeBadge({ label, count }: Props) {
     const [showTooltip, setShowTooltip] = useState(false);
     const colorClass = BADGE_COLORS[label] || BADGE_COLORS.default;
+
+    // Format tie text if multiple winners
+    const tieText = count && count > 1 ? ` (${count}-way tie)` : '';
 
     return (
         <div
@@ -27,6 +31,7 @@ export default function SuperlativeBadge({ label }: Props) {
                 className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border cursor-help ${colorClass}`}
             >
                 ⭐ {label}
+                {tieText}
             </span>
             {showTooltip && (
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg shadow-lg z-20 pointer-events-none">

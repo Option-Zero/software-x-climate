@@ -16,6 +16,7 @@ type Props = {
     onToggle: () => void;
     showSuperlative?: boolean;
     alwaysExpanded?: boolean;
+    superlativeCounts?: Record<string, number>;
 };
 
 export default function ProjectCard({
@@ -24,6 +25,7 @@ export default function ProjectCard({
     onToggle,
     showSuperlative = false,
     alwaysExpanded = false,
+    superlativeCounts,
 }: Props) {
     const anchorId = project.id.slice(-6);
     const teamMembers = parseTeamMembers(project.Team);
@@ -87,7 +89,11 @@ export default function ProjectCard({
                                 {showSuperlative && project.Superlative && (
                                     <div className="flex gap-2 flex-wrap">
                                         {project.Superlative.map((badge) => (
-                                            <SuperlativeBadge key={badge} label={badge} />
+                                            <SuperlativeBadge
+                                                key={badge}
+                                                label={badge}
+                                                count={superlativeCounts?.[badge]}
+                                            />
                                         ))}
                                     </div>
                                 )}

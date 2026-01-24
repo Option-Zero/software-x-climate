@@ -18,6 +18,14 @@ export default function CohortSection({
     expandedProjectId,
     onToggleProject,
 }: Props) {
+    // Calculate how many projects share each superlative
+    const superlativeCounts: Record<string, number> = {};
+    projects.superlative.forEach((project) => {
+        project.Superlative?.forEach((award) => {
+            superlativeCounts[award] = (superlativeCounts[award] || 0) + 1;
+        });
+    });
+
     return (
         <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-gray-800">{cohort} Cohort</h2>
@@ -38,6 +46,7 @@ export default function CohortSection({
                                 onToggle={() => {}}
                                 showSuperlative
                                 alwaysExpanded
+                                superlativeCounts={superlativeCounts}
                             />
                         ))}
                     </div>
