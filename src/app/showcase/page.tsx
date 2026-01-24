@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react';
 import { Project } from '@/types/project';
 import { groupProjectsByCohort } from '@/lib/utils';
 import Header from './components/Header';
+import IntroSection from './components/IntroSection';
 import CohortSection from './components/CohortSection';
 import CohortNavigation from './components/CohortNavigation';
+import AboutModal from './components/AboutModal';
 import Footer from './components/Footer';
 import LoadingSkeleton from './components/LoadingSkeleton';
 
@@ -69,6 +71,7 @@ export default function ShowcasePage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-blue-50">
             <Header />
+            <IntroSection />
             {!loading && <CohortNavigation cohorts={cohorts} />}
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 {loading ? (
@@ -90,6 +93,7 @@ export default function ShowcasePage() {
                 )}
             </main>
             <Footer />
+            <AboutModal />
         </div>
     );
 }
