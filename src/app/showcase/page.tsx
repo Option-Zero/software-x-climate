@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Project } from '@/types/project';
-import { groupProjectsByCohort, generateAnchorId } from '@/lib/utils';
+import { groupProjectsByCohort } from '@/lib/utils';
 import Header from './components/Header';
 import CohortSection from './components/CohortSection';
 import Footer from './components/Footer';
@@ -41,9 +41,9 @@ export default function ShowcasePage() {
                     setTimeout(() => {
                         const element = document.getElementById(hash);
                         if (element) {
-                            // Find project ID from anchor
+                            // Find project by last 6 chars of Airtable ID
                             const project = result.data?.find(
-                                (p: Project) => generateAnchorId(p.Name) === hash
+                                (p: Project) => p.id.slice(-6) === hash
                             );
                             if (project) {
                                 setExpandedProjectId(project.id);

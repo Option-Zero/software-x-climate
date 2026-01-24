@@ -15,24 +15,24 @@ type Story = StoryObj<typeof meta>;
 
 export const BestOverall: Story = {
     args: {
-        superlative: 'Best Overall',
+        label: 'Best Overall',
     },
 };
 
 export const MostInteresting: Story = {
     args: {
-        superlative: 'Most Interesting',
+        label: 'Most Interesting',
     },
 };
 
 export const BestExecution: Story = {
     args: {
-        superlative: 'Best Execution',
+        label: 'Best Execution',
     },
 };
 
 export const UnknownSuperlative: Story = {
     args: {
-        superlative: 'Some Other Award',
+        label: 'Some Other Award',
     },
 };

@@ -4,7 +4,7 @@ import { ChevronDown, Link as LinkIcon } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { useState } from 'react';
 import { Project } from '@/types/project';
-import { generateAnchorId, parseTeamMembers } from '@/lib/utils';
+import { parseTeamMembers } from '@/lib/utils';
 import SuperlativeBadge from './SuperlativeBadge';
 import ProjectLinks from './ProjectLinks';
 import TeamMembers from './TeamMembers';
@@ -25,7 +25,7 @@ export default function ProjectCard({
     showSuperlative = false,
     alwaysExpanded = false,
 }: Props) {
-    const anchorId = generateAnchorId(project.Name);
+    const anchorId = project.id.slice(-6);
     const teamMembers = parseTeamMembers(project.Team);
     const heroImage = project['Hero Image']?.[0];
     const [showImageModal, setShowImageModal] = useState(false);
@@ -69,19 +69,21 @@ export default function ProjectCard({
                         <div className="flex-1 min-w-0">
                             <div className="flex items-start gap-3 mb-2 flex-wrap">
                                 <h3 className="text-xl font-semibold text-gray-800">
-                                    {project.Name}
+                                    {project.Name}{' '}
+                                    <a
+                                        href={`#${anchorId}`}
+                                        onClick={handleCopyLink}
+                                        className="inline-flex items-center p-1 hover:bg-gray-200 rounded transition-colors align-middle"
+                                        title={
+                                            copied ? 'Copied!' : 'Link to project (click to copy)'
+                                        }
+                                        aria-label="Link to project"
+                                    >
+                                        <LinkIcon
+                                            className={`w-4 h-4 ${copied ? 'text-green-600' : 'text-gray-400'}`}
+                                        />
+                                    </a>
                                 </h3>
-                                <a
-                                    href={`#${anchorId}`}
-                                    onClick={handleCopyLink}
-                                    className="flex-shrink-0 p-1 hover:bg-gray-200 rounded transition-colors"
-                                    title={copied ? 'Copied!' : 'Link to project (click to copy)'}
-                                    aria-label="Link to project"
-                                >
-                                    <LinkIcon
-                                        className={`w-4 h-4 ${copied ? 'text-green-600' : 'text-gray-400'}`}
-                                    />
-                                </a>
                                 {showSuperlative && project.Superlative && (
                                     <div className="flex gap-2 flex-wrap">
                                         {project.Superlative.map((badge) => (

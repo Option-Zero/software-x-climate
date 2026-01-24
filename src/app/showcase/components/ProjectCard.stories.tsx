@@ -45,7 +45,7 @@ A comprehensive dashboard for tracking climate metrics and visualizing environme
         },
     ],
     'Code repository': 'https://github.com/example/project',
-    'Demo app': 'https://example.com/demo',
+    'Demo App': 'https://example.com/demo',
     'Presentation slides': 'https://example.com/slides',
     Created: '2025-02-15T00:00:00.000Z',
 };
@@ -118,7 +118,7 @@ export const NoLinks: Story = {
         project: {
             ...mockProject,
             'Code repository': undefined,
-            'Demo app': undefined,
+            'Demo App': undefined,
             'Presentation slides': undefined,
         },
         isExpanded: true,
