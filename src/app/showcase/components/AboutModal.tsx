@@ -1,6 +1,7 @@
 'use client';
 
 import { X, Info } from 'lucide-react';
+import { COURSE_URLS } from '../constants';
 
 type Props = {
     isOpen: boolean;
@@ -141,7 +142,7 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                     Learn more about Software for Climate and how to enroll.
                                 </p>
                                 <a
-                                    href="https://www.terra.do/climate-change-courses/software-for-climate/"
+                                    href={COURSE_URLS.fromModal}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"

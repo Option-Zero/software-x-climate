@@ -1,3 +1,5 @@
+import { COURSE_URLS } from '../constants';
+
 export default function Footer() {
     return (
         <footer className="bg-gray-800 text-white py-12 mt-16">
@@ -8,7 +10,7 @@ export default function Footer() {
                     next steps in climate tech.
                 </p>
                 <a
-                    href="https://www.terra.do/climate-change-courses/software-for-climate/?utm_source=showcase&utm_medium=footer&utm_campaign=final_projects"
+                    href={COURSE_URLS.fromFooter}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg transition"
