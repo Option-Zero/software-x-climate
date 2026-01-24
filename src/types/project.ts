@@ -18,7 +18,7 @@ export type Project = {
     Name: string;
     Description: string;
     Team: string; // Comma-separated names
-    Cohort: string; // e.g., "Apr 2024"
+    Cohort?: string; // e.g., "Apr 2024" - optional as Airtable may not include empty fields
     'Hero Image'?: AirtableImage[];
     Superlative?: string[]; // e.g., ["Best Overall", "Most Interesting"]
     'Has Superlative'?: boolean;
