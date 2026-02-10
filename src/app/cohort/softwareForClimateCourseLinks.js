@@ -472,7 +472,7 @@ export const STATIC_LINKS = [
     },
     {
         name: 'Feb 2026 Cohort Schedule',
-        slug: '2026-02-Schedule',
+        slug: 'schedule',
         url: 'https://claude.ai/public/artifacts/c8517bb0-25a2-4536-8973-df814ba3b410',
     },
 ];
