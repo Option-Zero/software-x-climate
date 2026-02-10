@@ -458,7 +458,7 @@ export const STATIC_LINKS = [
     {
         name: 'Final projects gallery',
         slug: 'final-projects-gallery',
-        url: 'https://airtable.com/appiTlFyRhnNrKlLh/shrT1vwHe9tmoKCUy/tblXD5Vfd9lUIhd10',
+        url: 'https://softwarexclimate.com/portfolio',
     },
     {
         name: 'Climate-relevant data sources',
@@ -469,6 +469,11 @@ export const STATIC_LINKS = [
         name: 'Resilience framework',
         slug: 'resilience-framework',
         url: 'https://www.figma.com/board/5sf6q9P4Xa5mvx5v4JLQww/Climate-Resilience-Framework',
+    },
+    {
+        name: 'Feb 2026 Cohort Schedule',
+        slug: '2026-02-Schedule',
+        url: 'https://claude.ai/public/artifacts/c8517bb0-25a2-4536-8973-df814ba3b410',
     },
 ];
 
