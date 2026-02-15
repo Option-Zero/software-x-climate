@@ -1,6 +1,97 @@
-export const CURRENT_COHORT = '2025-09';
+export const CURRENT_COHORT = '2026-02';
 
 export const PER_COHORT_LINKS = {
+    '2026-02': [
+        {
+            name: 'Slido audience participation',
+            slug: 'slido',
+            url: 'https://app.sli.do/event/wkgFiPsXbvs9zfbsCRSbUf',
+        },
+        {
+            name: 'Hex workspace',
+            slug: 'hex-workspace',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/collection/71b38f71-e7c1-4c10-b5d2-e8e3941a2f53/templates?sort=project_name%3Aasc&duration=all_time',
+        },
+        {
+            name: 'Assignment 1 Hex Notebook',
+            slug: 'assignment-1-hex-notebook',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/hex/d6728b7c-f462-4715-9e92-37b1ea1f203d/draft/logic',
+        },
+        {
+            name: 'Assignment 2 Hex Notebook',
+            slug: 'assignment-2-hex-notebook',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/hex/b084deda-75e3-4d11-b408-960db76fa149/draft/logic',
+        },
+        {
+            name: 'Assignment 3 Hex Notebook',
+            slug: 'assignment-3-hex-notebook',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/hex/011f5172-3056-48d2-8f66-07af92293fad/draft/logic',
+        },
+        {
+            name: 'Assignment 4a Hex Notebook',
+            slug: 'assignment-4a-hex-notebook',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/hex/9770ef10-17aa-4713-9d01-f3a3c705dbf0/draft/logic',
+        },
+        {
+            name: 'Assignment 4b Hex Notebook',
+            slug: 'assignment-4b-hex-notebook',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/hex/32b01562-130d-4e1c-a5a7-91cec3dc7110/draft/logic',
+        },
+        {
+            name: 'Assignment 5 Hex Notebook',
+            slug: 'assignment-5-hex-notebook',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/hex/c94e760f-2073-4b94-b0fb-ec49a056f339/draft/logic',
+        },
+        {
+            name: 'Assignment 5 Fleet Monitoring Notebook',
+            slug: 'assignment-5-fleet-monitor',
+            url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/hex/6b967d92-6e12-4ae2-b3e8-df774201782c/draft/logic',
+        },
+        {
+            name: 'Fellows list',
+            slug: 'fellows-list',
+            // From Fellows table -> create view for cohort -> Share and sync
+            // Fellows table: https://airtable.com/appISFhoXPzMISHio/tblulEIqJgGhzsBnT/viwmoIL6mp1UKwNz3?blocks=hide
+            url: 'https://airtable.com/appISFhoXPzMISHio/shrXEr28y2kyRv3rI',
+        },
+        { // Auto-directs to correct cohort based on cohort with "(current)" in the name on the airtable
+            name: 'Fellows form',
+            slug: 'fellows-form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pagFVNA6H4P1vHOvY/form',
+        },
+        {
+            name: 'Final project pitches folder',
+            slug: 'final-project-pitches-folder',
+            url: 'https://drive.google.com/drive/u/0/folders/1-1_D7WKKWLX1Td_D2jWEh_AYaKKiS_MQ',
+        },
+        {
+            name: 'Final project plans form',
+            slug: 'final-project-plans-form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/pag4wOwxcFEbRrLD7/form',
+        },
+        {
+            // From Final Projects table -> create view for cohort -> Share and sync
+            // Final Projects table: https://airtable.com/appISFhoXPzMISHio/tblj5DFIZPUR9jKwG/viwos5ysP2BJ3Q6mV?blocks=hide
+            name: 'Final projects list',
+            slug: 'final-projects-list',
+            url: 'https://airtable.com/appISFhoXPzMISHio/shrVwFEG1LOVUldBJ',
+        },
+        {
+            name: 'Final project ratings form',
+            slug: 'final-project-ratings-form',
+            url: 'https://airtable.com/appISFhoXPzMISHio/paglKpl0y9a6KL6qA/form',
+        },
+        {
+            name: 'Final project presentation signup',
+            slug: 'final-project-presentation-signup',
+            url: 'https://docs.google.com/spreadsheets/d/1zGRpUynEgT2PVjXqrsoGjaCgDokKu6nRpvovwusjQ38/edit?gid=0#gid=0',
+        },
+        {
+            name: 'End of course survey',
+            slug: 'end-of-course-survey',
+            url: '404',
+        },
+    ],
     '2025-09': [
         {
             name: 'Slido audience participation',
