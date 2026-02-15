@@ -549,7 +549,7 @@ export const STATIC_LINKS = [
     {
         name: 'Final projects gallery',
         slug: 'final-projects-gallery',
-        url: 'https://softwarexclimate.com/portfolio',
+        url: 'https://softwarexclimate.com/showcase',
     },
     {
         name: 'Climate-relevant data sources',
