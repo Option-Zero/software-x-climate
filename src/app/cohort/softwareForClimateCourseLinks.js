@@ -8,6 +8,11 @@ export const PER_COHORT_LINKS = {
             url: 'https://app.sli.do/event/wkgFiPsXbvs9zfbsCRSbUf',
         },
         {
+            name: 'Google Drive folder',
+            slug: 'google-drive',
+            url: 'https://drive.google.com/drive/u/0/folders/1fX5tICBGIoTs5ymV1cNR2SzxXgwvDEJM',
+        },
+        {
             name: 'Hex workspace',
             slug: 'hex-workspace',
             url: 'https://app.hex.tech/8c094f1d-0b43-4e53-9491-a2d694a475cf/collection/71b38f71-e7c1-4c10-b5d2-e8e3941a2f53/templates?sort=project_name%3Aasc&duration=all_time',
