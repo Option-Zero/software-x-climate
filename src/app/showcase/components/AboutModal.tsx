@@ -68,12 +68,12 @@ export default function AboutModal({ isOpen, onOpen, onClose }: Props) {
                                     >
                                         Terra.do
                                     </a>{' '}
-                                    that teaches students about applications at the intersection of
+                                    that prepares students to work at the intersection of
                                     software and climate change.
                                 </p>
                                 <p className="text-gray-700 mt-2">
-                                    Students learn frameworks for understanding climate solutions,
-                                    explore existing climate tech companies, and discover how their
+                                    Students explore existing climate tech companies, 
+                                    get hands-on with climate-relevant software, and discover how their
                                     technical skills can contribute to climate action.
                                 </p>
                             </section>
